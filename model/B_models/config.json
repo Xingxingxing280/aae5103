@@ -1,0 +1,18 @@
+{
+  "data_root": "../A_handoff/data/processed",
+  "random_state": 42,
+  "categorical_features": ["Airline", "Origin", "Dest"],
+  "numeric_features": [
+    "DayOfWeek",
+    "ScheduledHour",
+    "ScheduledMinuteOfDay",
+    "IsWeekend",
+    "Distance",
+    "CRSElapsedTime"
+  ],
+  "positive_label": 1,
+  "risk_quantiles": {
+    "medium": 0.4,
+    "high": 0.8
+  }
+}

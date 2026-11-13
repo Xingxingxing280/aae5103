@@ -1,0 +1,8 @@
+{
+  "year": 2025,
+  "months": [1, 2, 3],
+  "origins": ["ATL", "ORD", "DFW"],
+  "train_end": "2025-02-14",
+  "validation_end": "2025-02-28",
+  "scope_status": "Provisional implementation choice; topic confirmed, airports and period not separately confirmed by the group."
+}

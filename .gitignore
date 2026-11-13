@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+data/A_handoff/data/raw/*.zip
+data/A_handoff/data/processed/*.csv
+model/B_models/data/predictions/*.csv

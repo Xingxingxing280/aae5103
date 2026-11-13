@@ -1,0 +1,28 @@
+{
+  "selected_model": "random_forest",
+  "selected_display": "Random Forest",
+  "decision_threshold": 0.20555012214049975,
+  "validation_f1": 0.42803230698691497,
+  "validation_precision": 0.3006639579823605,
+  "validation_recall": 0.7426263615224574,
+  "family_best": {
+    "logistic_regression": "logistic_regression_balanced",
+    "random_forest": "random_forest"
+  },
+  "family_thresholds": {
+    "logistic_regression": 0.4584091453067686,
+    "random_forest": 0.20555012214049975
+  },
+  "positive_class": "TargetDelayed15 = 1, gate departure delay of at least 15 minutes",
+  "features": [
+    "Airline",
+    "Origin",
+    "Dest",
+    "DayOfWeek",
+    "ScheduledHour",
+    "ScheduledMinuteOfDay",
+    "IsWeekend",
+    "Distance",
+    "CRSElapsedTime"
+  ]
+}

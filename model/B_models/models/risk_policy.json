@@ -1,0 +1,32 @@
+{
+  "medium_cut": 0.2068772656144997,
+  "high_cut": 0.248971104043284,
+  "quantiles": {
+    "medium": 0.4,
+    "high": 0.8
+  },
+  "validation_bands": [
+    {
+      "risk_level": "Low",
+      "n": 13205,
+      "share": 0.39996971073754356,
+      "observed_delay_rate": 0.16630064369556985,
+      "mean_predicted_probability": 0.16538365148986267
+    },
+    {
+      "risk_level": "Medium",
+      "n": 13206,
+      "share": 0.4,
+      "observed_delay_rate": 0.2769195820081781,
+      "mean_predicted_probability": 0.22688781039321398
+    },
+    {
+      "risk_level": "High",
+      "n": 6604,
+      "share": 0.20003028926245645,
+      "observed_delay_rate": 0.3509993943064809,
+      "mean_predicted_probability": 0.27342831773833426
+    }
+  ],
+  "note": "风险切分来自验证集预测概率分位数，冻结后再用于测试集。High 对应验证集概率最高的 20%，Medium 为中间 40%，Low 为最低 40%。风险等级不是因果干预效果，也不等于官方延误标签。"
+}

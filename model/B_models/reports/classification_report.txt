@@ -1,0 +1,43 @@
+sklearn classification_report
+正类 = TargetDelayed15（登机口出发延误至少 15 分钟）
+阈值在验证集上按 F1 选定，测试集不再调阈值。
+
+## validation / Logistic Regression
+              precision    recall  f1-score   support
+
+     on_time     0.8238    0.4253    0.5610     24844
+  delayed_15     0.2928    0.7234    0.4169      8171
+
+    accuracy                         0.4991     33015
+   macro avg     0.5583    0.5744    0.4889     33015
+weighted avg     0.6924    0.4991    0.5253     33015
+
+## validation / Random Forest
+              precision    recall  f1-score   support
+
+     on_time     0.8361    0.4319    0.5696     24844
+  delayed_15     0.3007    0.7426    0.4280      8171
+
+    accuracy                         0.5088     33015
+   macro avg     0.5684    0.5873    0.4988     33015
+weighted avg     0.7036    0.5088    0.5345     33015
+
+## test / Logistic Regression
+              precision    recall  f1-score   support
+
+     on_time     0.8528    0.4222    0.5648     59238
+  delayed_15     0.2802    0.7553    0.4088     17640
+
+    accuracy                         0.4986     76878
+   macro avg     0.5665    0.5888    0.4868     76878
+weighted avg     0.7214    0.4986    0.5290     76878
+
+## test / Random Forest
+              precision    recall  f1-score   support
+
+     on_time     0.8520    0.4259    0.5679     59238
+  delayed_15     0.2805    0.7516    0.4085     17640
+
+    accuracy                         0.5006     76878
+   macro avg     0.5663    0.5888    0.4882     76878
+weighted avg     0.7209    0.5006    0.5313     76878

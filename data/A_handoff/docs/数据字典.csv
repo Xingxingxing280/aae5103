@@ -1,0 +1,31 @@
+﻿字段,来源,定义与单位,用途,本次读入类型,缺失数量
+record_id,项目生成,航班标识字段拼接的 SHA-256 前24位；唯一性已检查,连接预测结果，不入模型,str,0
+Year,Year,航班年份,审计,int64,0
+Month,Month,月份1–12,描述统计,int64,0
+DayofMonth,DayofMonth,日期中的日,审计,int64,0
+DayOfWeek,DayOfWeek,周一1至周日7，与日期核对,模型特征,int64,0
+FlightDate,FlightDate,当地航班日期；YYYY-MM-DD,划分、描述统计,str,0
+Airline,Reporting_Airline,报告承运人代码，不是航空公司全名或营销承运人,模型类别特征,str,0
+FlightNumber,Flight_Number_Reporting_Airline,航班号，按字符串保存,身份核对、不入模型,int64,0
+Origin,Origin,出发机场代码,模型类别特征,str,0
+Dest,Dest,目的机场代码,模型类别特征,str,0
+CRSDepTime,CRSDepTime,当地计划登机口出发时间，HHMM，非分钟数,生成计划时段特征,int64,0
+DepTime,DepTime,当地实际登机口出发时间，HHMM，可缺失,事后信息，禁止入模型,float64,4894
+DepDelay,DepDelay,出发延误分钟数，负值为提前出发,标签核对、禁止入模型,float64,4921
+DepDel15,DepDel15,官方出发延误至少15分钟指示；1=是,答案字段，禁止入模型,float64,4921
+Cancelled,Cancelled,取消指示；1=取消,描述统计与样本筛选，禁止入模型,float64,0
+Diverted,Diverted,备降指示；1=是,审计，禁止入模型,float64,0
+CRSElapsedTime,CRSElapsedTime,计划航程时间，分钟,模型数值特征,float64,0
+Distance,Distance,机场间距离，英里,模型数值特征,float64,0
+SourceArchive,项目生成,来源ZIP文件名,追溯,str,0
+SourceMember,项目生成,ZIP内部CSV文件名,追溯,str,0
+SourceRow,项目生成,原始CSV从1开始的数据行序号，不包括表头,追溯,int64,0
+TargetDelayed15,由DepDel15筛选,非取消航班标签0/1；取消或无标签记录为空,目标y，禁止放入X,float64,5118
+ScheduledMinuteOfDay,由CRSDepTime生成,计划当地分钟数0–1439；2400映射0,模型数值特征,int64,0
+ScheduledHour,由CRSDepTime生成,计划当地小时0–23,模型数值特征,int64,0
+IsWeekend,由DayOfWeek生成,周六/周日为1，否则0,模型数值特征,int64,0
+ScheduledAt2400,由CRSDepTime生成,原始计划时间是否等于2400,审计,int64,0
+ActualTimeInvalid,由DepTime生成,非空实际时间不符合HHMM规则为1；空值另见missingness,审计，禁止入模型,int64,0
+split,由FlightDate生成,train / validation / test；模型排除记录也有日期所属划分,分组信息，禁止入模型,str,0
+ModelExclusionReason,项目规则,首个模型排除原因；空字符串表示无排除原因,审计,str,209171
+ModelEligible,项目规则,是否满足当前建模样本规则,筛选，禁止入模型,bool,0
